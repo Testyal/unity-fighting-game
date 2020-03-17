@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70fb1d74-faa9-414f-8ca7-753f73078153" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Controls.inputactions" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Controls.inputactions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/Animators/UnityChanLocomotions.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/Animators/UnityChanLocomotions.controller" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,14 +20,17 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Fighter Inputs.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/FightingController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MovementController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/InputBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/MovementController.cs" />
         <option value="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/.gitignore" />
+        <option value="$PROJECT_DIR$/Assets/FightingController.cs" />
+        <option value="$PROJECT_DIR$/Assets/MovementController.cs" />
       </list>
     </option>
   </component>
@@ -79,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584361266155</updated>
       <workItem from="1584361268542" duration="7000" />
-      <workItem from="1584361298191" duration="9774000" />
+      <workItem from="1584361298191" duration="15059000" />
     </task>
     <servers />
   </component>

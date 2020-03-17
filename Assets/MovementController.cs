@@ -21,7 +21,6 @@ class MovementRegime
 }
 
 
-
 class GroundedMovement: MovementRegime
 {
     private readonly float groundedSpeed;
@@ -113,21 +112,31 @@ public class MovementController : MonoBehaviour
     private GroundedMovement groundedMovement;
     private JumpingMovement jumpingMovement;
 
-    private float sideInput;
-    private void OnSideMovement(InputValue value)
+    private void OnLightPunch()
     {
-        this.sideInput = value.Get<float>();
+        Debug.Log("LP");
     }
     
-    // TODO: Big problem with this - A side input has to be given at least a frame before jump is pressed in order to do a diagonal jump. 
-    private JumpingDirection jumpingDirection;
-    private void OnJump()
+    private void OnLightKick()
     {
-        if (this.sideInput > 0.1f) this.jumpingDirection = JumpingDirection.Right;
-        else if (this.sideInput < -0.1f) this.jumpingDirection = JumpingDirection.Left;
-        else this.jumpingDirection = JumpingDirection.None;
+        Debug.Log("LK");
+    }
 
-        this.state = MovementState.Jumping;
+    private float sideAxis;
+    private JumpingDirection direction;
+    private void OnMotion(InputValue value)
+    {
+        Vector2 axis = value.Get<Vector2>();
+        this.sideAxis = axis.x;
+        
+        if (axis.y > 0.1f && this.state == MovementState.Grounded)
+        {
+            if (this.sideAxis > 0.1f) this.direction = JumpingDirection.Right;
+            else if (this.sideAxis < -0.1f) this.direction = JumpingDirection.Left;
+            else this.direction = JumpingDirection.None;
+
+            this.state = MovementState.Jumping;
+        }
     }
 
     private void Start()
@@ -142,10 +151,10 @@ public class MovementController : MonoBehaviour
         switch (this.state)
         {
             case MovementState.Grounded:
-                this.state = groundedMovement.FixedUpdate(this.sideInput, Time.fixedDeltaTime);
+                this.state = groundedMovement.FixedUpdate(this.sideAxis, Time.fixedDeltaTime);
                 break;
             case MovementState.Jumping:
-                this.state = jumpingMovement.FixedUpdate(this.jumpingDirection, Time.fixedDeltaTime);
+                this.state = jumpingMovement.FixedUpdate(this.direction, Time.fixedDeltaTime);
                 break;
         }
     }
