@@ -7,18 +7,19 @@ class AttackController : MonoBehaviour
 
     private Move currentMove;
 
-    public (ADState, Func<MovementController, MovementState>) Tick(ADState currentState)
+    public (ADState, Func<MovementController, MovementState>) Tick(ADState currentADState, MovementState currentMoveState)
     {
-        switch (currentState)
+        Debug.Log("AD State: " + currentADState);
+        switch (currentADState)
         {
             case ADState.PreMove:
                 return currentMove.Initialize();
             case ADState.Startup:
             case ADState.Active:
             case ADState.Recovery:
-                return currentMove.Tick(currentState);
+                return currentMove.Tick(currentADState);
             default:
-                return (currentState, controller => controller.State);
+                return (currentADState, _ => currentMoveState);
         }
     }
 

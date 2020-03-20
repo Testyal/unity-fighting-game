@@ -52,7 +52,7 @@ abstract class Move : MonoBehaviour
     {
         elapsedFrames++;
 
-        if (elapsedFrames<startup) return (ADState.Startup, controller => controller.State);
+        if (elapsedFrames < startup) return (ADState.Startup, controller => controller.State);
 
         elapsedFrames = 0;
         Debug.Log("Entering active.");
@@ -80,6 +80,6 @@ abstract class Move : MonoBehaviour
         Debug.Log("Ending move.");
         Destroy(this.gameObject);
         
-        return (ADState.None, controller => controller.State);
+        return (ADState.None, _ => MovementState.Stationary);
     }
 }

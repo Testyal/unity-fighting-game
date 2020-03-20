@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public enum MovementState
 {
@@ -49,10 +50,17 @@ class Character: MonoBehaviour
 
     private void FixedUpdate()
     {
-        var (attackADState, attackMoveFunction) = attackController.Tick(adState);
+        this.moveState = movementController.Tick(moveState);
+        
+        var (attackADState, attackMoveFunction) = attackController.Tick(adState, moveState);
 
         this.adState = attackADState;
         this.moveState = attackMoveFunction(movementController);
+    }
+
+    private void OnMotion(InputValue value)
+    {
+        this.moveState = movementController.Motion(moveState, value.Get<Vector2>());
     }
     
     private void OnLightPunch()

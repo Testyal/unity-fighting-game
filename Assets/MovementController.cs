@@ -33,10 +33,11 @@ class GroundedMovement: MovementRegime
     {
         if (Mathf.Abs(sideInput) > 0.1f)
         {
-            this.Transform.forward = sideInput * Vector3.right;
             this.Transform.Translate(groundedSpeed * delta * Mathf.Sign(sideInput), 0.0f, 0.0f, Space.World);
         }
 
+        if (sideInput > 0.1f) return MovementState.Walking;
+        if (sideInput < -0.1f) return MovementState.Reversing;
         return MovementState.Stationary;
     }
 }
@@ -115,18 +116,36 @@ public class MovementController : MonoBehaviour
     
     private float sideAxis;
     private JumpingDirection direction;
-    private void OnMotion(InputValue value)
+    public MovementState Motion(MovementState currentState, Vector2 inputAxis)
     {
-        Vector2 axis = value.Get<Vector2>();
-        this.sideAxis = axis.x;
+        this.sideAxis = inputAxis.x;
         
-        if (axis.y > 0.1f && this.state == MovementState.Stationary)
+        switch (currentState)
         {
-            if (this.sideAxis > 0.1f) this.direction = JumpingDirection.Right;
-            else if (this.sideAxis < -0.1f) this.direction = JumpingDirection.Left;
-            else this.direction = JumpingDirection.None;
+            case MovementState.Disabled:
+                return MovementState.Disabled;
+            
+            case MovementState.Jumping:
+                return MovementState.Jumping;
+            
+            case MovementState.Walking:
+            case MovementState.Reversing:
+            case MovementState.Stationary:
+                if (inputAxis.y > 0.1f)
+                {
+                    if (this.sideAxis > 0.1f) this.direction = JumpingDirection.Right;
+                    else if (this.sideAxis < -0.1f) this.direction = JumpingDirection.Left;
+                    else this.direction = JumpingDirection.None;
 
-            this.state = MovementState.Jumping;
+                    return MovementState.Jumping;
+                }
+                
+                if (inputAxis.x > 0.1f) return MovementState.Walking;
+                if (inputAxis.x < -0.1f) return MovementState.Reversing;
+                return MovementState.Stationary;
+            
+            default:
+                return MovementState.Stationary;
         }
     }
 
@@ -138,16 +157,20 @@ public class MovementController : MonoBehaviour
         this.jumpingMovement = new JumpingMovement(transform, this.gravity, this.horizontalAirSpeed, this.jumpingSpeed);
     }
     
-    private void FixedUpdate()
+    public MovementState Tick(MovementState currentState)
     {
-        switch (this.state)
+        this.state = currentState;
+        Debug.Log("Movement State: " + currentState);
+        switch (currentState)
         {
             case MovementState.Stationary:
-                this.state = groundedMovement.FixedUpdate(this.sideAxis, Time.fixedDeltaTime);
-                break;
+            case MovementState.Walking:
+            case MovementState.Reversing:
+                return groundedMovement.FixedUpdate(this.sideAxis, Time.fixedDeltaTime);
             case MovementState.Jumping:
-                this.state = jumpingMovement.FixedUpdate(this.direction, Time.fixedDeltaTime);
-                break;
+                return jumpingMovement.FixedUpdate(this.direction, Time.fixedDeltaTime);
+            default:
+                return currentState;
         }
     }
 }
