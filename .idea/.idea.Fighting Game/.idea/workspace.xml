@@ -2,13 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70fb1d74-faa9-414f-8ca7-753f73078153" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/AttackController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/AttackController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Character.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/ConcreteMove.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DefenseController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DefenseController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Move.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/MovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New Controls.inputactions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New Controls.inputactions.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/Animators/UnityChanLocomotions.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/Animations/Animators/UnityChanLocomotions.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/body_01_NRM.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/body_01_NRM.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/face_00.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/face_00.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Audio/Voice/univ1341.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Audio/Voice/univ1341.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Documentation/UnityChanLicense2.0/License Logo/LUUL_logo-guideline.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Documentation/UnityChanLicense2.0/License Logo/LUUL_logo-guideline.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Documentation/UnityChanLicense2.0/License Logo/LUUL_logo-guideline_en.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Documentation/UnityChanLicense2.0/License Logo/LUUL_logo-guideline_en.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Documentation/unitychan_dynamic.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Documentation/unitychan_dynamic.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Documentation/unitychan_shader.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/unity-chan!/Unity-chan! Model/Documentation/unitychan_shader.pdf.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,9 +39,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Fighter Inputs.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/FightingController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AttackController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DefenseController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Move.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MovementController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ConcreteMove.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -30,6 +52,12 @@
         <option value="$PROJECT_DIR$/Assets/InputBehavior.cs" />
         <option value="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/.gitignore" />
         <option value="$PROJECT_DIR$/Assets/FightingController.cs" />
+        <option value="$PROJECT_DIR$/Assets/inputtest.cs" />
+        <option value="$PROJECT_DIR$/Assets/ConcreteMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/DefenseController.cs" />
+        <option value="$PROJECT_DIR$/Assets/AttackController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Character.cs" />
+        <option value="$PROJECT_DIR$/Assets/Move.cs" />
         <option value="$PROJECT_DIR$/Assets/MovementController.cs" />
       </list>
     </option>
@@ -48,6 +76,7 @@
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -69,10 +98,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="18926">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="18926" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -88,8 +117,17 @@
       <option name="presentableId" value="Default" />
       <updated>1584361266155</updated>
       <workItem from="1584361268542" duration="7000" />
-      <workItem from="1584361298191" duration="15059000" />
+      <workItem from="1584361298191" duration="19011000" />
+      <workItem from="1584516600847" duration="32080000" />
     </task>
+    <task id="LOCAL-00001" summary="Change motion input to a Vector2.">
+      <created>1584445239958</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584445239958</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,10 +135,28 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
+    <MESSAGE value="Change motion input to a Vector2." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change motion input to a Vector2." />
   </component>
   <component name="WindowStateProjectService">
+    <state x="718" y="162" key="RiderGenerateDialog" />
+    <state x="718" y="162" key="RiderGenerateDialog/1920.1080/3360.2100" />
+    <state x="777" y="157" width="1006" height="766" key="SettingsEditor" />
+    <state x="777" y="157" width="1006" height="766" key="SettingsEditor/1920.1080/3360.2100" />
+    <state x="296" y="174" key="SettingsEditor/3360.2100" />
     <state x="675" y="291" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" />
     <state x="675" y="291" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/1920.1080/3360.2100" />
     <state x="623" y="239" width="672" height="678" key="search.everywhere.popup" />

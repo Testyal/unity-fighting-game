@@ -1,15 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Diagnostics;
+using UnityEditor;
+using UnityEditor.PackageManager;
+using UnityEditor.SceneManagement;
+using UnityEngine;
 using UnityEngine.InputSystem;
+using Debug = UnityEngine.Debug;
 
-
-enum MovementState
-{
-    Grounded,
-    Jumping
-}
-
-
-class MovementRegime
+abstract class MovementRegime
 {
     private readonly Transform transform;
     public Transform Transform => transform;
@@ -39,7 +37,7 @@ class GroundedMovement: MovementRegime
             this.Transform.Translate(groundedSpeed * delta * Mathf.Sign(sideInput), 0.0f, 0.0f, Space.World);
         }
 
-        return MovementState.Grounded;
+        return MovementState.Stationary;
     }
 }
 
@@ -51,12 +49,12 @@ enum JumpingDirection
     Right
 }
 
-class JumpingMovement: MovementRegime
+class JumpingMovement : MovementRegime
 {
     private readonly float jumpingSpeed;
     private readonly float gravity;
     private readonly float horizontalAirSpeed;
-    
+
     public JumpingMovement(Transform transform, float gravity, float horizontalAirSpeed, float jumpingSpeed)
         : base(transform)
     {
@@ -64,7 +62,7 @@ class JumpingMovement: MovementRegime
         this.horizontalAirSpeed = horizontalAirSpeed;
         this.jumpingSpeed = jumpingSpeed;
     }
-    
+
     int Sign(JumpingDirection direction)
     {
         switch (direction)
@@ -78,18 +76,20 @@ class JumpingMovement: MovementRegime
     }
 
     private float jumpingTimeElapsed = 0.0f;
+
     public MovementState FixedUpdate(JumpingDirection direction, float delta)
     {
         jumpingTimeElapsed += delta;
-        this.Transform.position += (Sign(direction) * horizontalAirSpeed * delta) * Vector3.right 
-                                   + (this.jumpingSpeed * delta - this.gravity * jumpingTimeElapsed * delta) * Vector3.up;
+        this.Transform.position += (Sign(direction) * horizontalAirSpeed * delta) * Vector3.right
+                                   + (this.jumpingSpeed * delta - this.gravity * jumpingTimeElapsed * delta) *
+                                   Vector3.up;
 
         if (this.Transform.position.y < 0.0f)
         {
             this.Transform.position -= this.Transform.position.y * Vector3.up;
             this.jumpingTimeElapsed = 0.0f;
 
-            return MovementState.Grounded;
+            return MovementState.Stationary;
         }
 
         return MovementState.Jumping;
@@ -108,20 +108,11 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float jumpingSpeed;
 
     private MovementState state;
+    public MovementState State => state;
 
     private GroundedMovement groundedMovement;
     private JumpingMovement jumpingMovement;
-
-    private void OnLightPunch()
-    {
-        Debug.Log("LP");
-    }
     
-    private void OnLightKick()
-    {
-        Debug.Log("LK");
-    }
-
     private float sideAxis;
     private JumpingDirection direction;
     private void OnMotion(InputValue value)
@@ -129,7 +120,7 @@ public class MovementController : MonoBehaviour
         Vector2 axis = value.Get<Vector2>();
         this.sideAxis = axis.x;
         
-        if (axis.y > 0.1f && this.state == MovementState.Grounded)
+        if (axis.y > 0.1f && this.state == MovementState.Stationary)
         {
             if (this.sideAxis > 0.1f) this.direction = JumpingDirection.Right;
             else if (this.sideAxis < -0.1f) this.direction = JumpingDirection.Left;
@@ -146,11 +137,12 @@ public class MovementController : MonoBehaviour
         this.groundedMovement = new GroundedMovement(transform, this.groundedSpeed);
         this.jumpingMovement = new JumpingMovement(transform, this.gravity, this.horizontalAirSpeed, this.jumpingSpeed);
     }
+    
     private void FixedUpdate()
     {
         switch (this.state)
         {
-            case MovementState.Grounded:
+            case MovementState.Stationary:
                 this.state = groundedMovement.FixedUpdate(this.sideAxis, Time.fixedDeltaTime);
                 break;
             case MovementState.Jumping:
