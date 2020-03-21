@@ -50,11 +50,57 @@ enum JumpingDirection
     Right
 }
 
-class JumpingMovement : MovementRegime
+interface IAirMovement
 {
-    private readonly float jumpingSpeed;
-    private readonly float gravity;
-    private readonly float horizontalAirSpeed;
+    MovementState Tick(JumpingDirection direction, float delta, float airTimeElapsed);
+}
+
+class AirMovementController
+{
+    private JumpingMovement jumpingMovement;
+    private LandingMovement landingMovement;
+
+    private float airTimeElapsed = 0.0f;
+
+    public AirMovementController(Transform transform, float gravity, float horizontalAirSpeed, float jumpingSpeed)
+    {
+        this.jumpingMovement = new JumpingMovement(transform, gravity,  horizontalAirSpeed,  jumpingSpeed);
+        this.landingMovement = new LandingMovement(transform, gravity, horizontalAirSpeed, jumpingSpeed);
+    }
+
+    public MovementState Tick(MovementState state, JumpingDirection direction, float delta)
+    {
+        this.airTimeElapsed += delta;
+        Debug.Log(this.airTimeElapsed);
+
+        MovementState newState;
+        switch (state)
+        {
+            case MovementState.Jumping:
+                newState = jumpingMovement.Tick(direction, delta, this.airTimeElapsed);
+                break;
+            case MovementState.Landing:
+                newState = landingMovement.Tick(direction, delta, this.airTimeElapsed);
+                break;
+            default:
+                newState = state;
+                break;
+        }
+
+        if (newState != MovementState.Jumping && newState != MovementState.Landing)
+        {
+            this.airTimeElapsed = 0.0f;
+        }
+
+        return newState;
+    }
+}
+
+class JumpingMovement : MovementRegime, IAirMovement
+{
+    protected readonly float jumpingSpeed;
+    protected readonly float gravity;
+    protected readonly float horizontalAirSpeed;
 
     public JumpingMovement(Transform transform, float gravity, float horizontalAirSpeed, float jumpingSpeed)
         : base(transform)
@@ -64,7 +110,7 @@ class JumpingMovement : MovementRegime
         this.jumpingSpeed = jumpingSpeed;
     }
 
-    int Sign(JumpingDirection direction)
+    protected int Sign(JumpingDirection direction)
     {
         switch (direction)
         {
@@ -75,25 +121,46 @@ class JumpingMovement : MovementRegime
 
         return 0;
     }
-
-    private float jumpingTimeElapsed = 0.0f;
-
-    public MovementState FixedUpdate(JumpingDirection direction, float delta)
+    
+    public MovementState Tick(JumpingDirection direction, float delta, float airTimeElapsed)
     {
-        jumpingTimeElapsed += delta;
         this.Transform.position += (Sign(direction) * horizontalAirSpeed * delta) * Vector3.right
-                                   + (this.jumpingSpeed * delta - this.gravity * jumpingTimeElapsed * delta) *
+                                   + (this.jumpingSpeed * delta - this.gravity * airTimeElapsed * delta) *
                                    Vector3.up;
 
         if (this.Transform.position.y < 0.0f)
         {
             this.Transform.position -= this.Transform.position.y * Vector3.up;
-            this.jumpingTimeElapsed = 0.0f;
 
             return MovementState.Stationary;
         }
 
         return MovementState.Jumping;
+    }
+}
+
+
+class LandingMovement : JumpingMovement, IAirMovement
+{
+    public LandingMovement(Transform transform, float gravity, float horizontalAirSpeed, float jumpingSpeed)
+        : base(transform, gravity, horizontalAirSpeed, jumpingSpeed)
+    {
+    }
+    
+    public MovementState Tick(JumpingDirection direction, float delta, float airTimeElapsed)
+    {
+        this.Transform.position += (Sign(direction) * horizontalAirSpeed * delta) * Vector3.right
+                                   + (this.jumpingSpeed * delta - this.gravity * airTimeElapsed * delta) *
+                                   Vector3.up;
+
+        if (this.Transform.position.y < 0.0f)
+        {
+            this.Transform.position -= this.Transform.position.y * Vector3.up;
+
+            return MovementState.Disabled;
+        }
+
+        return MovementState.Landing;
     }
 }
 
@@ -108,12 +175,11 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float horizontalAirSpeed;
     [SerializeField] private float jumpingSpeed;
 
-    private MovementState state;
-    public MovementState State => state;
+    public MovementState State { get; set; }
 
     private GroundedMovement groundedMovement;
-    private JumpingMovement jumpingMovement;
-    
+    private AirMovementController airMovementController;
+
     private float sideAxis;
     private JumpingDirection direction;
     public MovementState Motion(MovementState currentState, Vector2 inputAxis)
@@ -127,6 +193,9 @@ public class MovementController : MonoBehaviour
             
             case MovementState.Jumping:
                 return MovementState.Jumping;
+            
+            case MovementState.Landing:
+                return MovementState.Landing;
             
             case MovementState.Walking:
             case MovementState.Reversing:
@@ -149,28 +218,37 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         Transform transform = this.GetComponent<Transform>();
 
         this.groundedMovement = new GroundedMovement(transform, this.groundedSpeed);
-        this.jumpingMovement = new JumpingMovement(transform, this.gravity, this.horizontalAirSpeed, this.jumpingSpeed);
+        this.airMovementController = new AirMovementController(transform, this.gravity, this.horizontalAirSpeed, this.jumpingSpeed);
     }
     
-    public MovementState Tick(MovementState currentState)
+    public MovementState Tick()
     {
-        this.state = currentState;
-        Debug.Log("Movement State: " + currentState);
-        switch (currentState)
+        switch (State)
         {
             case MovementState.Stationary:
             case MovementState.Walking:
             case MovementState.Reversing:
                 return groundedMovement.FixedUpdate(this.sideAxis, Time.fixedDeltaTime);
             case MovementState.Jumping:
-                return jumpingMovement.FixedUpdate(this.direction, Time.fixedDeltaTime);
+            case MovementState.Landing:
+                return airMovementController.Tick(this.State, this.direction, Time.fixedDeltaTime);
             default:
-                return currentState;
+                return State;
         }
+    }
+    
+    public MovementState EnterLanding()
+    {
+        return MovementState.Landing;
+    }
+
+    public MovementState EnterJumping()
+    {
+        return MovementState.Jumping;
     }
 }

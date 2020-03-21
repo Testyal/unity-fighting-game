@@ -1,3 +1,5 @@
+using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +11,7 @@ public enum MovementState
     Reversing,
     
     Jumping,
+    Landing,
     
     Crouching,
     
@@ -39,9 +42,14 @@ class Character: MonoBehaviour
     private AttackController attackController;
     private DefenseController defenseController;
     
-    private MovementState moveState;
-    private ADState adState;
+    private MovementState MoveState
+    {
+        get { return movementController.State; }
+        set { movementController.State = value; }
+    }
 
+    private ADState adState;
+    
     private void Awake()
     {
         movementController = GetComponent<MovementController>();
@@ -50,21 +58,39 @@ class Character: MonoBehaviour
 
     private void FixedUpdate()
     {
-        this.moveState = movementController.Tick(moveState);
+        this.MoveState = movementController.Tick();
         
-        var (attackADState, attackMoveFunction) = attackController.Tick(adState, moveState);
+        var (attackADState, attackMoveFunction) = attackController.Tick(adState, MoveState);
 
         this.adState = attackADState;
-        this.moveState = attackMoveFunction(movementController);
+        this.MoveState = attackMoveFunction(movementController);
+    }
+
+    private void OnGUI()
+    {
+        DebugText.Draw(MoveState, adState);
     }
 
     private void OnMotion(InputValue value)
     {
-        this.moveState = movementController.Motion(moveState, value.Get<Vector2>());
+        this.MoveState = movementController.Motion(MoveState, value.Get<Vector2>());
     }
     
     private void OnLightPunch()
     {
         this.adState = attackController.LightPunch(adState);
+    }
+}
+
+
+class DebugText
+{
+    public static void Draw(MovementState moveState, ADState adState)
+    {
+        GUI.color = Color.green;
+        GUI.Label(new Rect(5.0f, 0.0f, 500.0f, 20.0f), $"moveState: {moveState}");
+        
+        GUI.color = Color.red;
+        GUI.Label(new Rect(5.0f, 20.0f, 500.0f, 20.0f), $"adState: {adState}");
     }
 }

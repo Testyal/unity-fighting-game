@@ -9,7 +9,6 @@ class AttackController : MonoBehaviour
 
     public (ADState, Func<MovementController, MovementState>) Tick(ADState currentADState, MovementState currentMoveState)
     {
-        Debug.Log("AD State: " + currentADState);
         switch (currentADState)
         {
             case ADState.PreMove:
@@ -26,8 +25,8 @@ class AttackController : MonoBehaviour
     public ADState LightPunch(ADState currentState)
     {
         if (currentState != ADState.None) return currentState;
-        
-        this.currentMove = Instantiate(lightPunch).GetComponent<Move>();
+
+        this.currentMove = Instantiate(lightPunch, this.transform).GetComponent<Move>();
 
         return ADState.PreMove;
     }

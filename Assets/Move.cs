@@ -5,8 +5,7 @@ abstract class Move : MonoBehaviour
 {
     [Header("Damage")]
     [SerializeField] private int damage;
-    public int Damage => damage;
-
+    
     [Header("General frame data")]
     [SerializeField] private int startup;
     [SerializeField] private int active;
@@ -18,6 +17,7 @@ abstract class Move : MonoBehaviour
     protected abstract Func<MovementController, MovementState> EnterStartup { get; }
     protected abstract Func<MovementController, MovementState> EnterActive { get; }
     protected abstract Func<MovementController, MovementState> EnterRecovery { get; }
+    protected abstract Func<MovementController, MovementState> EndMove { get; }
 
     private int elapsedFrames = 0;
     /// <summary>
@@ -38,13 +38,12 @@ abstract class Move : MonoBehaviour
             case ADState.Recovery:
                 return Recovery();
             default:
-            throw new Exception("Attempting to tick a move during an inappropriate ADState. (Must be Startup, Active, or Recovery.)");
+                throw new Exception("Attempting to tick a move during an inappropriate ADState. (Must be Startup, Active, or Recovery.)");
         }
     }
     
     public (ADState, Func<MovementController, MovementState>) Initialize()
     {
-        Debug.Log("Starting move.");
         return (ADState.Startup, EnterStartup);
     }
 
@@ -55,7 +54,6 @@ abstract class Move : MonoBehaviour
         if (elapsedFrames < startup) return (ADState.Startup, controller => controller.State);
 
         elapsedFrames = 0;
-        Debug.Log("Entering active.");
         return (ADState.Active, EnterActive);
     }
 
@@ -66,7 +64,6 @@ abstract class Move : MonoBehaviour
         if (elapsedFrames < active) return (ADState.Active, controller => controller.State);
         
         elapsedFrames = 0;
-        Debug.Log("Entering recovery.");
         return (ADState.Recovery, EnterRecovery);
     }
 
@@ -77,9 +74,8 @@ abstract class Move : MonoBehaviour
         if (elapsedFrames < recovery) return (ADState.Recovery, controller => controller.State);
         
         elapsedFrames = 0;
-        Debug.Log("Ending move.");
         Destroy(this.gameObject);
         
-        return (ADState.None, _ => MovementState.Stationary);
+        return (ADState.None, EndMove);
     }
 }
