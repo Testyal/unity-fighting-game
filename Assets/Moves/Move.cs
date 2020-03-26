@@ -109,7 +109,7 @@ abstract class Move : MonoBehaviour
     
     public (DefenseState, Action<MovementController>) InitializeDefenderHit()
     {
-        return (DefenseState.Hit, controller => controller.EnterLanding(JumpingDirection.Right));
+        return (DefenseState.Hit, controller => controller.EnterLanding(JumpingDirection.Left));
     }
     
     private int elapsedDefenderFrames = 0;

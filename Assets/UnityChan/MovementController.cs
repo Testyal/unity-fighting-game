@@ -200,20 +200,23 @@ public class MovementController : MonoBehaviour
 
     private float sideAxis;
     private JumpingDirection direction;
-    public MovementState Motion(MovementState currentState, Vector2 inputAxis)
+    public void Motion(Vector2 inputAxis)
     {
         this.sideAxis = inputAxis.x;
         
-        switch (currentState)
+        switch (this.state)
         {
             case MovementState.Disabled:
-                return MovementState.Disabled;
+                this.state = MovementState.Disabled;
+                break;
             
             case MovementState.Jumping:
-                return MovementState.Jumping;
+                this.state = MovementState.Jumping;
+                break;
             
             case MovementState.Landing:
-                return MovementState.Landing;
+                this.state = MovementState.Landing;
+                break;
             
             case MovementState.Walking:
             case MovementState.Reversing:
@@ -224,23 +227,19 @@ public class MovementController : MonoBehaviour
                     else if (this.sideAxis < -0.1f) this.direction = JumpingDirection.Left;
                     else this.direction = JumpingDirection.None;
 
-                    return MovementState.Jumping;
+                    this.state = MovementState.Jumping;
                 }
+                else if (inputAxis.x > 0.1f) this.state = MovementState.Walking;
+                else if (inputAxis.x < -0.1f) this.state = MovementState.Reversing;
+                else this.state = MovementState.Stationary;
+                break;
                 
-                if (inputAxis.x > 0.1f) return MovementState.Walking;
-                if (inputAxis.x < -0.1f) return MovementState.Reversing;
-                return MovementState.Stationary;
-            
             default:
-                return MovementState.Stationary;
+                this.state = MovementState.Stationary;
+                break;
         }
     }
 
-    private void OnMotion(InputValue value)
-    {
-        this.state = this.Motion(this.state, value.Get<Vector2>());
-    }
-    
     private void Awake()
     {
         Transform transform = this.GetComponent<Transform>();

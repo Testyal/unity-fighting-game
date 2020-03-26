@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70fb1d74-faa9-414f-8ca7-753f73078153" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/DummyCharacter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Moves/UnityChan_sLP/UnityChan_sLP.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/UnityChan/ADController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UnityChan/InputMovementController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Moves/Move.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moves/Move.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_sLP/ConcreteMove.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_sLP/ConcreteMove.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moves/UnityChan_sLP/UnityChan_sLP.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_sLP/LightPunch.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moves/UnityChan_sLP/LightPunch.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityChan/Character.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/body_01.tga.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/body_01.tga.meta" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,6 +43,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DummyCharacter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/InputMovementController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -70,11 +62,12 @@
         <option value="$PROJECT_DIR$/Assets/UnityChan/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/ADController.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" />
-        <option value="$PROJECT_DIR$/Assets/DummyCharacter.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" />
         <option value="$PROJECT_DIR$/Assets/Moves/UnityChan_sLP/UnityChan_sLP.cs" />
-        <option value="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/Moves/Move.cs" />
+        <option value="$PROJECT_DIR$/Assets/DummyCharacter.cs" />
+        <option value="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/UnityChan/InputMovementController.cs" />
       </list>
     </option>
   </component>
@@ -136,7 +129,7 @@
       <workItem from="1584361298191" duration="19011000" />
       <workItem from="1584516600847" duration="47425000" />
       <workItem from="1584796881740" duration="853000" />
-      <workItem from="1584797755841" duration="49550000" />
+      <workItem from="1584797755841" duration="51777000" />
     </task>
     <task id="LOCAL-00001" summary="Change motion input to a Vector2.">
       <created>1584445239958</created>
@@ -180,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584798962690</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="DefenseController implemented among billions of other things. Code looks like trash and the procedural programming bug has begun to infect me.">
+      <created>1585224619470</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1585224619470</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +208,8 @@
     <MESSAGE value="Partially integrate movement with Character class." />
     <MESSAGE value="Further integration of movement; Added Landing MovementRegime and incorporated it into an AirMovementController." />
     <MESSAGE value="Change folder structure." />
-    <option name="LAST_COMMIT_MESSAGE" value="Change folder structure." />
+    <MESSAGE value="DefenseController implemented among billions of other things. Code looks like trash and the procedural programming bug has begun to infect me." />
+    <option name="LAST_COMMIT_MESSAGE" value="DefenseController implemented among billions of other things. Code looks like trash and the procedural programming bug has begun to infect me." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2503" y="200" key="#Vim_Emulation" />
@@ -278,6 +279,19 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/UnityChan/MovementController.cs</url>
+          <line>229</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" initialLine="229">
+            <startOffsets>
+              <option value="6472" />
+            </startOffsets>
+            <endOffsets>
+              <option value="6507" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

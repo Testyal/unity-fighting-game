@@ -17,6 +17,7 @@
           <e p="AttackController.cs" t="Include" />
           <e p="Character.cs" t="Include" />
           <e p="DefenseController.cs" t="Include" />
+          <e p="InputMovementController.cs" t="Include" />
           <e p="MovementController.cs" t="Include" />
           <e p="unity-chan!" t="Include">
             <e p="Unity-chan! Model" t="Include">
