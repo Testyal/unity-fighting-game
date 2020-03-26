@@ -1,23 +1,43 @@
 using System;
+using System.Diagnostics;
 using UnityEngine;
 
+
+enum MoveHeight
+{
+    Low,
+    Mid,
+    High
+}
+
+[RequireComponent(typeof(BoxCollider))]
 abstract class Move : MonoBehaviour
 {
-    [Header("Damage")]
+    [Header("Move properties")]
     [SerializeField] private int damage;
+    [SerializeField] public MoveHeight height;
     
     [Header("General frame data")]
     [SerializeField] private int startup;
     [SerializeField] private int active;
     [SerializeField] private int recovery;
 
-    [Header("Frame data on hit/block")] 
+    [Header("Opponent frame data")] 
+    [SerializeField] public int onBlock;
     [SerializeField] private int onHit;
 
-    protected abstract Func<MovementController, MovementState> EnterStartup { get; }
-    protected abstract Func<MovementController, MovementState> EnterActive { get; }
-    protected abstract Func<MovementController, MovementState> EnterRecovery { get; }
-    protected abstract Func<MovementController, MovementState> EndMove { get; }
+    private BoxCollider boxCollider;
+    
+    protected abstract Action<MovementController> EnterStartup();
+    protected abstract Action<MovementController> EnterActive();
+    protected abstract Action<MovementController> EnterRecovery();
+    protected abstract Action<MovementController> EndMove();
+
+    private void Start()
+    {
+        this.boxCollider = this.GetComponent<BoxCollider>();
+        boxCollider.enabled = false;
+    }
 
     private int elapsedFrames = 0;
     /// <summary>
@@ -26,56 +46,96 @@ abstract class Move : MonoBehaviour
     /// <param name="current">Current state of the attacking player.</param>
     /// <returns>State of the attacking player after the tick.</returns>
     /// <exception cref="Exception">Parameter <c>current</c> must be Startup, Active, or Recovery.</exception>
-    public (ADState, Func<MovementController, MovementState>) Tick(ADState current)
+    public (AttackState, Action<MovementController>) Tick(AttackState current)
     {
         elapsedFrames++;
         switch (current)
         {
-            case ADState.Startup:
+            case AttackState.Startup:
                 return Startup();
-            case ADState.Active:
+            case AttackState.Active:
                 return Active();
-            case ADState.Recovery:
+            case AttackState.Recovery:
                 return Recovery();
             default:
-                throw new Exception("Attempting to tick a move during an inappropriate ADState. (Must be Startup, Active, or Recovery.)");
+                throw new Exception("Attempting to tick a move during an inappropriate AttackState. (Must be Startup, Active, or Recovery.)");
         }
     }
-    
-    public (ADState, Func<MovementController, MovementState>) Initialize()
+
+    public (AttackState, Action<MovementController>) Initialize()
     {
-        return (ADState.Startup, EnterStartup);
+        return (AttackState.Startup, EnterStartup());
     }
 
-    private (ADState, Func<MovementController, MovementState>) Startup()
-    {
-        elapsedFrames++;
-
-        if (elapsedFrames < startup) return (ADState.Startup, controller => controller.State);
-
-        elapsedFrames = 0;
-        return (ADState.Active, EnterActive);
-    }
-
-    private (ADState, Func<MovementController, MovementState>) Active()
+    private (AttackState, Action<MovementController>) Startup()
     {
         elapsedFrames++;
         
-        if (elapsedFrames < active) return (ADState.Active, controller => controller.State);
-        
+        if (elapsedFrames < startup) return (AttackState.Startup, _ => { });
+
         elapsedFrames = 0;
-        return (ADState.Recovery, EnterRecovery);
+        boxCollider.enabled = true;
+        return (AttackState.Active, EnterActive());
     }
 
-    private (ADState, Func<MovementController, MovementState>) Recovery()
+    private (AttackState, Action<MovementController>) Active()
+    {
+        elapsedFrames++;
+        
+        if (elapsedFrames < active) return (AttackState.Active, _ => { });
+        
+        elapsedFrames = 0;
+        boxCollider.enabled = false;
+        return (AttackState.Recovery, EnterRecovery());
+    }
+
+    private (AttackState, Action<MovementController>) Recovery()
     {
         elapsedFrames++;
 
-        if (elapsedFrames < recovery) return (ADState.Recovery, controller => controller.State);
+        if (elapsedFrames < recovery) return (AttackState.Recovery, _ => { });
         
         elapsedFrames = 0;
         Destroy(this.gameObject);
         
-        return (ADState.None, EndMove);
+        return (AttackState.None, EndMove());
+    }
+
+
+    public (DefenseState, Action<MovementController>) InitializeDefenderBlock()
+    {
+        return (DefenseState.Blocking, controller => controller.DisableMotion());
+    }
+    
+    public (DefenseState, Action<MovementController>) InitializeDefenderHit()
+    {
+        return (DefenseState.Hit, controller => controller.EnterLanding(JumpingDirection.Right));
+    }
+    
+    private int elapsedDefenderFrames = 0;
+    public (DefenseState, Action<MovementController>) TickDefenderBlock()
+    {
+        elapsedDefenderFrames++;
+
+        if (elapsedDefenderFrames == onBlock)
+        {
+            Destroy(this.gameObject);
+            return (DefenseState.None, controller => controller.EnableMotion());
+        }
+
+        return (DefenseState.Blocking, _ => { });
+    }
+    
+    public (DefenseState, Action<MovementController>) TickDefenderHit()
+    {
+        elapsedDefenderFrames++;
+
+        if (elapsedDefenderFrames == onHit)
+        {    
+            Destroy(this.gameObject);
+            return (DefenseState.None, controller => controller.EnableMotion());
+        }
+
+        return (DefenseState.Hit, _ => { });
     }
 }

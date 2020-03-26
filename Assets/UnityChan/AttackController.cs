@@ -1,6 +1,17 @@
 using System;
-using Unity.Collections.LowLevel.Unsafe;
+using UnityEditor;
 using UnityEngine;
+
+enum AttackState
+{
+    None,
+    
+    PreMove,
+    Startup,
+    Active,
+    Recovery
+}
+
 
 class AttackController : MonoBehaviour
 {
@@ -8,47 +19,61 @@ class AttackController : MonoBehaviour
 
     private Move currentMove;
     
-    public ADState ADState { get; set; }
+    private AttackState state = AttackState.None;
 
-    public (ADState, Func<MovementController, MovementState>) Tick()
+    public Action<MovementController> Tick()
     {
-        switch (this.ADState)
+        (AttackState, Action<MovementController>) output; 
+        switch (this.state)
         {
-            case ADState.PreMove:
-                return currentMove.Initialize();
-            case ADState.Startup:
-            case ADState.Active:
-            case ADState.Recovery:
-                return currentMove.Tick(this.ADState);
+            case AttackState.PreMove:
+                output = currentMove.Initialize();
+                break;
+            case AttackState.Startup: 
+            case AttackState.Active:
+            case AttackState.Recovery:
+                output = currentMove.Tick(this.state);
+                break;
             default:
-                return (this.ADState, controller => controller.State);
+                output = (this.state, _ => { });
+                break;
         }
+
+        this.state = output.Item1;
+        
+        return output.Item2;
     }
 
-    public ADState StandingLP()
+    public AttackState Resolve(MovementState movementState)
     {
-        if (this.ADState != ADState.None) return this.ADState;
+        if (this.bufferedMove != null) BeginMove(bufferedMove);
+        this.bufferedMove = null;
 
-        this.currentMove = Instantiate(lightPunch, this.transform).GetComponent<Move>();
-
-        return ADState.PreMove;
+        return this.state;
     }
 
-    public ADState CrouchingLP()
+    private GameObject bufferedMove;
+    private void OnLightPunch()
     {
-        if (this.ADState != ADState.None) return this.ADState;
-
-        this.currentMove = Instantiate(lightPunch, this.transform).GetComponent<Move>();
-
-        return ADState.PreMove;
+        this.bufferedMove = lightPunch;
     }
 
-    public ADState JumpingLP()
+    private void BeginMove(GameObject move)
     {
-        if (this.ADState != ADState.None) return this.ADState;
+        if (this.state != AttackState.None) return;
 
-        this.currentMove = Instantiate(lightPunch, this.transform).GetComponent<Move>();
+        this.currentMove = Instantiate(move, this.transform).GetComponent<Move>();
+        this.state = AttackState.PreMove;
+    }
 
-        return ADState.PreMove;
+    public void StandingLP() => BeginMove(lightPunch);
+
+    public void CrouchingLP() => BeginMove(lightPunch);
+    
+    public void JumpingLP() => BeginMove(lightPunch);
+
+    public void WriteState()
+    {
+        DebugText.Write($"attackState: {this.state}", 1, 2, Color.red);
     }
 }

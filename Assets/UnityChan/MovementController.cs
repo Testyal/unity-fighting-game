@@ -7,6 +7,25 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Debug = UnityEngine.Debug;
 
+
+public enum MovementState
+{
+    // Ground movement
+    Stationary,
+    Walking,
+    Reversing,
+    Disabled,
+    
+    // Air movement 
+    Jumping,
+    Landing,
+    
+    // Crouching Movement
+    Crouching,
+    CrouchingBlock,
+    CrouchingDisabled
+}
+
 abstract class MovementRegime
 {
     private readonly Transform transform;
@@ -43,7 +62,7 @@ class GroundedMovement: MovementRegime
 }
 
 
-enum JumpingDirection
+public enum JumpingDirection
 {
     Left,
     None,
@@ -174,7 +193,7 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float horizontalAirSpeed;
     [SerializeField] private float jumpingSpeed;
 
-    public MovementState State { get; set; }
+    private MovementState state;
 
     private GroundedMovement groundedMovement;
     private AirMovementController airMovementController;
@@ -217,6 +236,11 @@ public class MovementController : MonoBehaviour
         }
     }
 
+    private void OnMotion(InputValue value)
+    {
+        this.state = this.Motion(this.state, value.Get<Vector2>());
+    }
+    
     private void Awake()
     {
         Transform transform = this.GetComponent<Transform>();
@@ -227,27 +251,74 @@ public class MovementController : MonoBehaviour
     
     public MovementState Tick()
     {
-        switch (State)
+        switch (this.state)
         {
             case MovementState.Stationary:
             case MovementState.Walking:
             case MovementState.Reversing:
-                return groundedMovement.FixedUpdate(this.sideAxis, Time.fixedDeltaTime);
+                this.state = groundedMovement.FixedUpdate(this.sideAxis, Time.fixedDeltaTime);
+                break;
+            
             case MovementState.Jumping:
             case MovementState.Landing:
-                return airMovementController.Tick(this.State, this.direction, Time.fixedDeltaTime);
-            default:
-                return State;
+                this.state = airMovementController.Tick(this.state, this.direction, Time.fixedDeltaTime);
+                break;
         }
+
+        return this.state;
     }
     
-    public MovementState EnterLanding()
+    public void EnterLanding(JumpingDirection direction)
     {
-        return MovementState.Landing;
+        this.direction = direction;
+        this.state = MovementState.Landing;
     }
 
     public MovementState EnterJumping()
     {
         return MovementState.Jumping;
+    }
+
+    public void DisableMotion()
+    {
+        switch (this.state)
+        {
+            case MovementState.Crouching:
+                this.state = MovementState.CrouchingDisabled;
+                break;
+            
+            case MovementState.Walking:
+            case MovementState.Stationary:
+            case MovementState.Reversing:
+                this.state = MovementState.Disabled;
+                break;
+            
+            case MovementState.Jumping:
+                this.state = MovementState.Landing;
+                break;
+        }
+    }
+
+    public void EnableMotion()
+    {
+        switch (this.state)
+        {
+            case MovementState.CrouchingDisabled:
+                this.state = MovementState.Crouching;
+                break;
+            
+            case MovementState.Disabled:
+                this.state = MovementState.Stationary;
+                break;
+            
+            case MovementState.Landing:
+                this.state = MovementState.Jumping;
+                break;
+        }
+    }
+
+    public void WriteState()
+    {
+        DebugText.Write($"movementState: {this.state}", 0, 0, Color.green);
     }
 }
