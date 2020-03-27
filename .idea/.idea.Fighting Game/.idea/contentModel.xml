@@ -5,10 +5,13 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="DummyCharacter.cs" t="Include" />
+        <e p="DummyCharacter" t="Include">
+          <e p="DummyAttackController.cs" t="Include" />
+          <e p="DummyCharacter.cs" t="Include" />
+        </e>
         <e p="Moves" t="Include">
           <e p="Move.cs" t="Include" />
-          <e p="UnityChan_sLP" t="Include">
+          <e p="UnityChan_LP" t="Include">
             <e p="UnityChan_sLP.cs" t="Include" />
           </e>
         </e>
@@ -17,6 +20,7 @@
           <e p="AttackController.cs" t="Include" />
           <e p="Character.cs" t="Include" />
           <e p="DefenseController.cs" t="Include" />
+          <e p="InputAttackController.cs" t="Include" />
           <e p="InputMovementController.cs" t="Include" />
           <e p="MovementController.cs" t="Include" />
           <e p="unity-chan!" t="Include">
@@ -71,6 +75,7 @@
             </e>
           </e>
         </e>
+        <e p="Variant.cs" t="Include" />
       </e>
       <e p="Fighting Game.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />

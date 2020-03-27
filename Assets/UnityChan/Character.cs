@@ -20,11 +20,20 @@ public enum ADState
     Hit
 }
 
-[RequireComponent(typeof(MovementController), typeof(AttackController))]
-class Character: MonoBehaviour
+
+public enum Side
+{
+    Left,
+    Right
+}
+
+[RequireComponent(typeof(MovementController))]
+public class Character: MonoBehaviour
 {
     [SerializeField] private int health;
 
+    public Side side;
+    
     private MovementController movementController;
     private ADController adController;
 
@@ -50,17 +59,17 @@ class Character: MonoBehaviour
 
     private void OnGUI()
     {
-        movementController.WriteState();
-        adController.WriteState();
+        movementController.WriteState(this.side);
+        adController.WriteState(this.side);
     }
 }
 
 
 class DebugText
 {
-    public static void Write(string text, int depth, int height, Color color)
+    public static void Write(string text, int depth, int height, Color color, Side side)
     {
         GUI.color = color;
-        GUI.Label(new Rect(5.0f, 20.0f * height, 500.0f, 20.0f), new string(' ', depth) + text);
+        GUI.Label(new Rect(5.0f + 200.0f * (side == Side.Left ? 0 : 1), 20.0f * height, 500.0f, 20.0f), new string(' ', depth) + text);
     }
 }

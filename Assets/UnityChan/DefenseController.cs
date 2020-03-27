@@ -128,8 +128,8 @@ class DefenseController : MonoBehaviour
         return movementCallback;
     }
 
-    public void WriteState()
+    public void WriteState(Side side)
     {
-        DebugText.Write($"defenseState: {this.state}", 1, 3, Color.red);
+        DebugText.Write($"defenseState: {this.state}", 1, 3, Color.red, side);
     }
 }

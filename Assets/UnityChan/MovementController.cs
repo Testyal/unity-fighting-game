@@ -316,8 +316,8 @@ public class MovementController : MonoBehaviour
         }
     }
 
-    public void WriteState()
+    public void WriteState(Side side)
     {
-        DebugText.Write($"movementState: {this.state}", 0, 0, Color.green);
+        DebugText.Write($"movementState: {this.state}", 0, 0, Color.green, side);
     }
 }

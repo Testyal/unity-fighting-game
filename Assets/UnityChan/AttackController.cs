@@ -46,14 +46,26 @@ class AttackController : MonoBehaviour
 
     public AttackState Resolve(MovementState movementState)
     {
-        if (this.bufferedMove != null) BeginMove(bufferedMove);
-        this.bufferedMove = null;
+        if (this.bufferedMove != null)
+        {
+            Variant variant = bufferedMove.GetComponent<Variant>();
+            GameObject moveObject = variant.ResolveGameObject(movementState);
+            
+            BeginMove(moveObject);
+            this.bufferedMove = null;
+        }
 
         return this.state;
     }
 
+    public void Cancel()
+    {
+        Destroy(currentMove.gameObject);
+        this.state = AttackState.None;
+    }
+    
     private GameObject bufferedMove;
-    private void OnLightPunch()
+    public void LightPunch()
     {
         this.bufferedMove = lightPunch;
     }
@@ -66,14 +78,8 @@ class AttackController : MonoBehaviour
         this.state = AttackState.PreMove;
     }
 
-    public void StandingLP() => BeginMove(lightPunch);
-
-    public void CrouchingLP() => BeginMove(lightPunch);
-    
-    public void JumpingLP() => BeginMove(lightPunch);
-
-    public void WriteState()
+    public void WriteState(Side side)
     {
-        DebugText.Write($"attackState: {this.state}", 1, 2, Color.red);
+        DebugText.Write($"attackState: {this.state}", 1, 2, Color.red, side);
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
@@ -25,7 +26,7 @@ abstract class Move : MonoBehaviour
     [Header("Opponent frame data")] 
     [SerializeField] public int onBlock;
     [SerializeField] private int onHit;
-
+    
     private BoxCollider boxCollider;
     
     protected abstract Action<MovementController> EnterStartup();

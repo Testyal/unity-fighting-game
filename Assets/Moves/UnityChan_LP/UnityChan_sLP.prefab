@@ -48,11 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   height: 1
-  startup: 100
-  active: 20
-  recovery: 200
-  onBlock: 100
-  onHit: 100
+  startup: 10
+  active: 2
+  recovery: 5
+  onBlock: 30
+  onHit: 10
   inactiveMaterial: {fileID: 2100000, guid: 3644f026a92304a5088f2291834c4a1f, type: 2}
   activeMaterial: {fileID: 2100000, guid: f716a71295d144e6aa6296e10d48f79d, type: 2}
 --- !u!65 &5765688273401224606

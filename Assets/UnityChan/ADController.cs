@@ -36,6 +36,7 @@ class ADController
             case DefenseState.Hit:
             case DefenseState.PreBlock:
             case DefenseState.PreHit:
+                if (attackState != AttackState.None) attackController.Cancel();
                 this.state = ADStateAlt.Defending;
                 break;
             
@@ -73,10 +74,10 @@ class ADController
         }
     }
 
-    public void WriteState()
+    public void WriteState(Side side)
     {
-        DebugText.Write($"adState: {this.state}", 0, 1, Color.red);
-        attackController.WriteState();
-        defenseController.WriteState();
+        DebugText.Write($"adState: {this.state}", 0, 1, Color.red, side);
+        attackController.WriteState(side);
+        defenseController.WriteState(side);
     }
 }
