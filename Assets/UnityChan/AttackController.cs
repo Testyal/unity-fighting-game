@@ -20,6 +20,7 @@ class AttackController : MonoBehaviour
     private Move currentMove;
     
     private AttackState state = AttackState.None;
+    public AttackState State => this.state;
 
     public Action<MovementController> Tick()
     {

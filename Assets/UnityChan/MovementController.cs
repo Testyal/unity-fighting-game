@@ -95,6 +95,11 @@ class AirMovementController: MovementRegime
         this.jump = new Jump(behaviorOnLanding, jumpingSpeed,  gravity,  horizontalAirSpeed, direction);
     }
 
+    public void ChangeLandingBehavior(MovementState behavior)
+    {
+        this.jump.behaviorOnLanding = behavior;
+    }
+
     public MovementState Tick(MovementState state, float delta)
     {
         this.airTimeElapsed += delta;
@@ -113,7 +118,7 @@ class AirMovementController: MovementRegime
 
 class Jump
 {
-    private readonly MovementState behaviorOnLanding;
+    public MovementState behaviorOnLanding;
 
     private readonly float jumpingSpeed;
     private readonly float gravity;
@@ -246,6 +251,7 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float jumpingSpeed;
 
     private MovementState state;
+    public MovementState State => this.state;
 
     public Side side = Side.Left;
 
@@ -322,17 +328,6 @@ public class MovementController : MonoBehaviour
 
         return this.state;
     }
-    
-    public void EnterLanding(JumpingDirection direction)
-    {
-        this.direction = direction;
-        this.state = MovementState.Landing;
-    }
-
-    public MovementState EnterJumping()
-    {
-        return MovementState.Jumping;
-    }
 
     public void JumpBackwards(float horizontalAirSpeed, float gravity, float jumpingSpeed)
     {
@@ -346,6 +341,13 @@ public class MovementController : MonoBehaviour
     public void JumpBackwards()
     {
         this.JumpBackwards(this.horizontalAirSpeed, this.gravity, this.jumpingSpeed);
+    }
+
+    public void JumpUpwards()
+    {
+        airMovementController.Jump(MovementState.Stationary, this.jumpingSpeed, this.gravity, this.horizontalAirSpeed, JumpingDirection.None);
+
+        this.state = MovementState.Jumping;
     }
 
     public void DisableMotion()
@@ -382,6 +384,10 @@ public class MovementController : MonoBehaviour
             
             case MovementState.Landing:
                 this.state = MovementState.Jumping;
+                break;
+            
+            case MovementState.Jumping:
+                this.airMovementController.ChangeLandingBehavior(MovementState.Stationary);
                 break;
         }
     }

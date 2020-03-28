@@ -7,6 +7,7 @@
       <e p="Assets" t="Include">
         <e p="DummyCharacter" t="Include">
           <e p="DummyAttackController.cs" t="Include" />
+          <e p="DummyController.cs" t="Include" />
         </e>
         <e p="Moves" t="Include">
           <e p="DefenseMove.cs" t="Include" />

@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e4a85f39544f5782efca464f8c34bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onBlock: 200
-  onHit: 200
+  onBlock: 10
+  onHit: 10
 --- !u!1 &6957071117465227658
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70fb1d74-faa9-414f-8ca7-753f73078153" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/DummyCharacter/DummyController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DummyCharacter/DummyController.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP_D.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP_D.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,11 +38,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_jLP_D.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/InputAttackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DummyCharacter/DummyAttackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/ADController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/Move.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DummyCharacter/DummyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab" root0="FORCE_HIGHLIGHTING" />
@@ -69,12 +78,13 @@
         <option value="$PROJECT_DIR$/Assets/Variant.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/InputAttackController.cs" />
         <option value="$PROJECT_DIR$/Assets/DummyCharacter/DummyAttackController.cs" />
-        <option value="$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/ADController.cs" />
         <option value="$PROJECT_DIR$/Assets/Moves/Move.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Moves/DefenseMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" />
+        <option value="$PROJECT_DIR$/Assets/DummyCharacter/DummyController.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" />
       </list>
     </option>
@@ -137,7 +147,7 @@
       <workItem from="1584361298191" duration="19011000" />
       <workItem from="1584516600847" duration="47425000" />
       <workItem from="1584796881740" duration="853000" />
-      <workItem from="1584797755841" duration="69556000" />
+      <workItem from="1584797755841" duration="71950000" />
     </task>
     <task id="LOCAL-00001" summary="Change motion input to a Vector2.">
       <created>1584445239958</created>
@@ -223,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585390520616</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Track some prefabs.">
+      <created>1585391676664</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1585391676664</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +273,8 @@
     <MESSAGE value="Make dummy character respond to player attacks; Provide a variant system to split moves into crouching, jumping, standing etc." />
     <MESSAGE value="Create a DefenseMove class to attach behavior to a defending opponent without using the Move class." />
     <MESSAGE value="Add Jump class (so moves are capable of putting people into the air in different ways)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Jump class (so moves are capable of putting people into the air in different ways)." />
+    <MESSAGE value="Track some prefabs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Track some prefabs." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2503" y="200" key="#Vim_Emulation" />
