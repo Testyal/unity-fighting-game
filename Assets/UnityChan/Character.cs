@@ -21,18 +21,12 @@ public enum ADState
 }
 
 
-public enum Side
-{
-    Left,
-    Right
-}
-
 [RequireComponent(typeof(MovementController))]
 public class Character: MonoBehaviour
 {
     [SerializeField] private int health;
 
-    public Side side;
+    public Side Side => movementController.side;
     
     private MovementController movementController;
     private ADController adController;
@@ -59,8 +53,8 @@ public class Character: MonoBehaviour
 
     private void OnGUI()
     {
-        movementController.WriteState(this.side);
-        adController.WriteState(this.side);
+        movementController.WriteState(this.Side);
+        adController.WriteState(this.Side);
     }
 }
 

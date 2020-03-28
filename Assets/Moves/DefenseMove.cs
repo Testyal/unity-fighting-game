@@ -15,7 +15,7 @@ class DefenseMove: MonoBehaviour
 
     public (DefenseState, Action<MovementController>) InitializeDefenderHit()
     {
-        return (DefenseState.Hit, controller => controller.EnterLanding(JumpingDirection.Left));
+        return (DefenseState.Hit, controller => controller.JumpBackwards());
     }
 
     private int elapsedDefenderFrames = 0;
