@@ -48,9 +48,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   height: 1
-  startup: 100
-  active: 20
-  recovery: 100
+  startup: 10
+  active: 2
+  recovery: 10
   defenseObject: {fileID: 1465823026902717298, guid: f2b7a4911f9674255afda84db092e64c,
     type: 3}
   inactiveMaterial: {fileID: 2100000, guid: 3644f026a92304a5088f2291834c4a1f, type: 2}

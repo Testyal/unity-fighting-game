@@ -2,40 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70fb1d74-faa9-414f-8ca7-753f73078153" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Moves/Move.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moves/Move.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_jLP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_jLP.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/body_01.tga" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/body_01.tga.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/body_01_NRM.tga" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/body_01_NRM.tga.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/face_00.tga" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/face_00.tga.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/guide.tga" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/guide.tga.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/hair_01.tga" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/hair_01.tga.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/hair_01_NRM.tga" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/hair_01_NRM.tga.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/hair_01_SPEC.tga" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/hair_01_SPEC.tga.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Audio/Voice/univ1339.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Audio/Voice/univ1339.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Audio/Voice/univ1341.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Audio/Voice/univ1341.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Audio/Voice/univ1342.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Audio/Voice/univ1342.wav.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/UnityChanLicense2.0/License Logo/LUUL_logo-guideline.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/UnityChanLicense2.0/License Logo/LUUL_logo-guideline.pdf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/UnityChanLicense2.0/License Logo/LUUL_logo-guideline_en.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/UnityChanLicense2.0/License Logo/LUUL_logo-guideline_en.pdf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/unitychan_dynamic.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/unitychan_dynamic.pdf.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/unitychan_shader.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/unitychan_shader.pdf.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -169,7 +137,7 @@
       <workItem from="1584361298191" duration="19011000" />
       <workItem from="1584516600847" duration="47425000" />
       <workItem from="1584796881740" duration="853000" />
-      <workItem from="1584797755841" duration="65428000" />
+      <workItem from="1584797755841" duration="65728000" />
     </task>
     <task id="LOCAL-00001" summary="Change motion input to a Vector2.">
       <created>1584445239958</created>
@@ -234,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585309423732</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Create a DefenseMove class to attach behavior to a defending opponent without using the Move class.">
+      <created>1585384687503</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1585384687504</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,7 +240,8 @@
     <MESSAGE value="DefenseController implemented among billions of other things. Code looks like trash and the procedural programming bug has begun to infect me." />
     <MESSAGE value="Separate MovementController.OnMotion into new component InputMovementController." />
     <MESSAGE value="Make dummy character respond to player attacks; Provide a variant system to split moves into crouching, jumping, standing etc." />
-    <option name="LAST_COMMIT_MESSAGE" value="Make dummy character respond to player attacks; Provide a variant system to split moves into crouching, jumping, standing etc." />
+    <MESSAGE value="Create a DefenseMove class to attach behavior to a defending opponent without using the Move class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create a DefenseMove class to attach behavior to a defending opponent without using the Move class." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2503" y="200" key="#Vim_Emulation" />

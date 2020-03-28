@@ -26,8 +26,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465823026902717298}
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6288836211074813560}
@@ -48,11 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   height: 2
-  startup: 50
-  active: 10
-  recovery: 25
-  onBlock: 30
-  onHit: 10
+  startup: 10
+  active: 2
+  recovery: 10
+  defenseObject: {fileID: 1465823026902717298, guid: 18c59ebce655048059cf283977e38910,
+    type: 3}
   inactiveMaterial: {fileID: 2100000, guid: 3644f026a92304a5088f2291834c4a1f, type: 2}
   activeMaterial: {fileID: 2100000, guid: f716a71295d144e6aa6296e10d48f79d, type: 2}
 --- !u!65 &5765688273401224606
