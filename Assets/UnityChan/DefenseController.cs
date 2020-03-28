@@ -20,7 +20,7 @@ enum DefenseState
 class DefenseController : MonoBehaviour
 {
     private DefenseState state = DefenseState.None;
-    private Move move;
+    private DefenseMove move;
 
     private Move collidedMove;
 
@@ -107,7 +107,7 @@ class DefenseController : MonoBehaviour
 
     private Action<MovementController> BeginHit()
     {
-        this.move = Instantiate(collidedMove.gameObject, this.transform).GetComponent<Move>();
+        this.move = Instantiate(collidedMove.defenseObject, this.transform).GetComponent<DefenseMove>();
         this.collidedMove = null;
 
         var (defenseState, movementCallback) = this.move.InitializeDefenderHit();
@@ -119,7 +119,7 @@ class DefenseController : MonoBehaviour
 
     private Action<MovementController> BeginBlock()
     {
-        this.move = Instantiate(collidedMove.gameObject, this.transform).GetComponent<Move>();
+        this.move = Instantiate(collidedMove.defenseObject, this.transform).GetComponent<DefenseMove>();
         this.collidedMove = null;
 
         var (defenseState, movementCallback) = this.move.InitializeDefenderBlock();

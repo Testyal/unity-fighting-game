@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5765688273401224606}
   - component: {fileID: 6142576544108099591}
   m_Layer: 0
-  m_Name: LightPunch
+  m_Name: UnityChan_sLP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,11 +48,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   height: 1
-  startup: 10
-  active: 2
-  recovery: 5
-  onBlock: 30
-  onHit: 10
+  startup: 100
+  active: 20
+  recovery: 100
+  defenseObject: {fileID: 1465823026902717298, guid: f2b7a4911f9674255afda84db092e64c,
+    type: 3}
   inactiveMaterial: {fileID: 2100000, guid: 3644f026a92304a5088f2291834c4a1f, type: 2}
   activeMaterial: {fileID: 2100000, guid: f716a71295d144e6aa6296e10d48f79d, type: 2}
 --- !u!65 &5765688273401224606
@@ -64,7 +64,7 @@ BoxCollider:
   m_GameObject: {fileID: 1465823026902717298}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 0.3, z: 0.5}
   m_Center: {x: 0, y: 0.2, z: 0.2}

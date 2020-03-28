@@ -23,17 +23,16 @@ abstract class Move : MonoBehaviour
     [SerializeField] private int active;
     [SerializeField] private int recovery;
 
-    [Header("Opponent frame data")] 
-    [SerializeField] public int onBlock;
-    [SerializeField] private int onHit;
-    
+    [Header("Opponent data")] 
+    [SerializeField] public GameObject defenseObject;
+
     private BoxCollider boxCollider;
     
     protected abstract Action<MovementController> EnterStartup();
     protected abstract Action<MovementController> EnterActive();
     protected abstract Action<MovementController> EnterRecovery();
     protected abstract Action<MovementController> EndMove();
-
+    
     private void Start()
     {
         this.boxCollider = this.GetComponent<BoxCollider>();
@@ -100,43 +99,5 @@ abstract class Move : MonoBehaviour
         Destroy(this.gameObject);
         
         return (AttackState.None, EndMove());
-    }
-
-
-    public (DefenseState, Action<MovementController>) InitializeDefenderBlock()
-    {
-        return (DefenseState.Blocking, controller => controller.DisableMotion());
-    }
-    
-    public (DefenseState, Action<MovementController>) InitializeDefenderHit()
-    {
-        return (DefenseState.Hit, controller => controller.EnterLanding(JumpingDirection.Left));
-    }
-    
-    private int elapsedDefenderFrames = 0;
-    public (DefenseState, Action<MovementController>) TickDefenderBlock()
-    {
-        elapsedDefenderFrames++;
-
-        if (elapsedDefenderFrames == onBlock)
-        {
-            Destroy(this.gameObject);
-            return (DefenseState.None, controller => controller.EnableMotion());
-        }
-
-        return (DefenseState.Blocking, _ => { });
-    }
-    
-    public (DefenseState, Action<MovementController>) TickDefenderHit()
-    {
-        elapsedDefenderFrames++;
-
-        if (elapsedDefenderFrames == onHit)
-        {    
-            Destroy(this.gameObject);
-            return (DefenseState.None, controller => controller.EnableMotion());
-        }
-
-        return (DefenseState.Hit, _ => { });
     }
 }

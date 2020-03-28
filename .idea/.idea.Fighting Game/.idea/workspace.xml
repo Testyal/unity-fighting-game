@@ -4,19 +4,38 @@
     <list default="true" id="70fb1d74-faa9-414f-8ca7-753f73078153" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DummyCharacter.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Moves/Move.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moves/Move.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_sLP.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_sLP/LightPunch.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_sLP/LightPunch.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_sLP/UnityChan_sLP.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_sLP/UnityChan_sLP.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/ADController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityChan/ADController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityChan/Character.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_jLP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_jLP.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/body_01.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/body_01.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/body_01_NRM.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/body_01_NRM.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/face_00.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/face_00.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/guide.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/guide.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/hair_01.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/hair_01.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/hair_01_NRM.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/hair_01_NRM.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/hair_01_SPEC.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Art/UnityChanShader/Texture/hair_01_SPEC.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Audio/Voice/univ1339.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Audio/Voice/univ1339.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Audio/Voice/univ1341.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Audio/Voice/univ1341.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Audio/Voice/univ1342.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Audio/Voice/univ1342.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/UnityChanLicense2.0/License Logo/LUUL_logo-guideline.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/UnityChanLicense2.0/License Logo/LUUL_logo-guideline.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/UnityChanLicense2.0/License Logo/LUUL_logo-guideline_en.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/UnityChanLicense2.0/License Logo/LUUL_logo-guideline_en.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/unitychan_dynamic.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/unitychan_dynamic.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/unitychan_shader.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/unity-chan!/Unity-chan! Model/Documentation/unitychan_shader.pdf.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,15 +64,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/DummyCharacter/DummyCharacter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/InputAttackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DummyCharacter/DummyAttackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/ADController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Variant.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/Move.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/Character.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_vLP.prefab.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Moves/DefenseMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Variant.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/InputMovementController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -76,14 +99,15 @@
         <option value="$PROJECT_DIR$/Assets/DummyCharacter.cs" />
         <option value="$PROJECT_DIR$/Assets/DummyCharacter/DummyCharacter.cs" />
         <option value="$PROJECT_DIR$/Assets/Variant.cs" />
-        <option value="$PROJECT_DIR$/Assets/Moves/Move.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/InputAttackController.cs" />
         <option value="$PROJECT_DIR$/Assets/DummyCharacter/DummyAttackController.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" />
-        <option value="$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/ADController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Moves/DefenseMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Moves/Move.cs" />
+        <option value="$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" />
       </list>
     </option>
   </component>
@@ -145,7 +169,7 @@
       <workItem from="1584361298191" duration="19011000" />
       <workItem from="1584516600847" duration="47425000" />
       <workItem from="1584796881740" duration="853000" />
-      <workItem from="1584797755841" duration="62321000" />
+      <workItem from="1584797755841" duration="65428000" />
     </task>
     <task id="LOCAL-00001" summary="Change motion input to a Vector2.">
       <created>1584445239958</created>
@@ -203,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585227470662</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Make dummy character respond to player attacks; Provide a variant system to split moves into crouching, jumping, standing etc.">
+      <created>1585309423732</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1585309423732</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,7 +264,8 @@
     <MESSAGE value="Change folder structure." />
     <MESSAGE value="DefenseController implemented among billions of other things. Code looks like trash and the procedural programming bug has begun to infect me." />
     <MESSAGE value="Separate MovementController.OnMotion into new component InputMovementController." />
-    <option name="LAST_COMMIT_MESSAGE" value="Separate MovementController.OnMotion into new component InputMovementController." />
+    <MESSAGE value="Make dummy character respond to player attacks; Provide a variant system to split moves into crouching, jumping, standing etc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Make dummy character respond to player attacks; Provide a variant system to split moves into crouching, jumping, standing etc." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2503" y="200" key="#Vim_Emulation" />
