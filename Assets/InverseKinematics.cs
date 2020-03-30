@@ -39,12 +39,12 @@ public class InverseKinematics : MonoBehaviour
             Vector2 lowerLegDirection = (delta.x / (2.0f * legLength) - xParameter * legLength) * Vector2.right
                                   + (delta.y / (2.0f * legLength) - yParameter * legLength) * Vector2.up;
 
-            float upperLegAngle = Mathf.Rad2Deg * Mathf.Acos(upperLegDirection.x);
-            float lowerLegAngle = Mathf.Rad2Deg * Mathf.Acos(lowerLegDirection.x);
+            float upperLegAngle = Mathf.Rad2Deg * Mathf.Atan2(upperLegDirection.y, upperLegDirection.x);
+            float lowerLegAngle = Mathf.Rad2Deg * Mathf.Atan2(lowerLegDirection.y, lowerLegDirection.x);
             
             upperLeg.rotation = Quaternion.Euler(0.0f, 0.0f, upperLegAngle);
             lowerLeg.localPosition = legLength * upperLegDirection;
-            lowerLeg.rotation = Quaternion.Euler(0.0f, 0.0f, -lowerLegAngle);
+            lowerLeg.rotation = Quaternion.Euler(0.0f, 0.0f, lowerLegAngle);
         }
     }
     

@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70fb1d74-faa9-414f-8ca7-753f73078153" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-    </list>
+    <list default="true" id="70fb1d74-faa9-414f-8ca7-753f73078153" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +140,7 @@
       <workItem from="1584361298191" duration="19011000" />
       <workItem from="1584516600847" duration="47425000" />
       <workItem from="1584796881740" duration="853000" />
-      <workItem from="1584797755841" duration="84045000" />
+      <workItem from="1584797755841" duration="84341000" />
     </task>
     <task id="LOCAL-00001" summary="Change motion input to a Vector2.">
       <created>1584445239958</created>
@@ -244,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585413623063</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Implement a 2D inverse kinematic leg for no good reason (other than it looks funny).">
+      <created>1585564187105</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1585564187106</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,7 +282,8 @@
     <MESSAGE value="Add Jump class (so moves are capable of putting people into the air in different ways)." />
     <MESSAGE value="Track some prefabs." />
     <MESSAGE value="Made the dummy character go really jumpy." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made the dummy character go really jumpy." />
+    <MESSAGE value="Implement a 2D inverse kinematic leg for no good reason (other than it looks funny)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement a 2D inverse kinematic leg for no good reason (other than it looks funny)." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2503" y="200" key="#Vim_Emulation" />
