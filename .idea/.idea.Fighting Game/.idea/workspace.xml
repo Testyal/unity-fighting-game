@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70fb1d74-faa9-414f-8ca7-753f73078153" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/DummyCharacter/DummyController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/DummyCharacter/DummyController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP_D.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP_D.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +51,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Variant.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/InputMovementController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/InverseKinematics.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -86,6 +82,7 @@
         <option value="$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" />
         <option value="$PROJECT_DIR$/Assets/DummyCharacter/DummyController.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/InverseKinematics.cs" />
       </list>
     </option>
   </component>
@@ -147,7 +144,7 @@
       <workItem from="1584361298191" duration="19011000" />
       <workItem from="1584516600847" duration="47425000" />
       <workItem from="1584796881740" duration="853000" />
-      <workItem from="1584797755841" duration="71950000" />
+      <workItem from="1584797755841" duration="84045000" />
     </task>
     <task id="LOCAL-00001" summary="Change motion input to a Vector2.">
       <created>1584445239958</created>
@@ -240,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585391676664</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Made the dummy character go really jumpy.">
+      <created>1585413623063</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1585413623063</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +278,8 @@
     <MESSAGE value="Create a DefenseMove class to attach behavior to a defending opponent without using the Move class." />
     <MESSAGE value="Add Jump class (so moves are capable of putting people into the air in different ways)." />
     <MESSAGE value="Track some prefabs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Track some prefabs." />
+    <MESSAGE value="Made the dummy character go really jumpy." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made the dummy character go really jumpy." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2503" y="200" key="#Vim_Emulation" />
