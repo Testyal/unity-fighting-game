@@ -21,7 +21,7 @@ public class InverseKinematics : MonoBehaviour
 
     private void Update()
     {
-        if (!transform.hasChanged) return;
+       // if (!transform.hasChanged) return;
 
         RaycastHit raycast;
         if (Physics.Raycast(transform.position, rayDirection, out raycast))

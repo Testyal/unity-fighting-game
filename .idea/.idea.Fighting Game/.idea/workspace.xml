@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70fb1d74-faa9-414f-8ca7-753f73078153" name="Default Changelist" comment="" />
+    <list default="true" id="70fb1d74-faa9-414f-8ca7-753f73078153" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InverseKinematics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InverseKinematics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,20 +36,23 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_jLP_D.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/InputAttackController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/DummyCharacter/DummyAttackController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/ADController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Moves/Move.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/DummyCharacter/DummyController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/Character.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_vLP.prefab.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MaintainGroundDistance.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/DefenseMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DummyCharacter/DummyAttackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/DefenseMove.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/ADController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SinusoidalMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Variant.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Moves/Move.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DummyCharacter/DummyController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/Character.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/InputMovementController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/InverseKinematics.cs" root0="FORCE_HIGHLIGHTING" />
@@ -78,7 +86,9 @@
         <option value="$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" />
         <option value="$PROJECT_DIR$/Assets/DummyCharacter/DummyController.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/MaintainGroundDistance.cs" />
         <option value="$PROJECT_DIR$/Assets/InverseKinematics.cs" />
+        <option value="$PROJECT_DIR$/Assets/SimpleMovement.cs" />
       </list>
     </option>
   </component>
@@ -140,7 +150,8 @@
       <workItem from="1584361298191" duration="19011000" />
       <workItem from="1584516600847" duration="47425000" />
       <workItem from="1584796881740" duration="853000" />
-      <workItem from="1584797755841" duration="84341000" />
+      <workItem from="1584797755841" duration="84745000" />
+      <workItem from="1585640121623" duration="1297000" />
     </task>
     <task id="LOCAL-00001" summary="Change motion input to a Vector2.">
       <created>1584445239958</created>
@@ -247,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585564187106</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Change angle calculation function to Mathf.Atan2.">
+      <created>1585564513845</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1585564513845</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +301,8 @@
     <MESSAGE value="Track some prefabs." />
     <MESSAGE value="Made the dummy character go really jumpy." />
     <MESSAGE value="Implement a 2D inverse kinematic leg for no good reason (other than it looks funny)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement a 2D inverse kinematic leg for no good reason (other than it looks funny)." />
+    <MESSAGE value="Change angle calculation function to Mathf.Atan2." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change angle calculation function to Mathf.Atan2." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2503" y="200" key="#Vim_Emulation" />
@@ -292,36 +311,52 @@
     <state x="2485" y="335" key="#com.intellij.fileTypes.FileTypeChooser/1920.1080/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.0.bottom" />
     <state width="1878" height="375" key="GridCell.Tab.0.bottom/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.0.bottom/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.0.center" />
     <state width="1878" height="375" key="GridCell.Tab.0.center/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.0.center/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.0.left" />
     <state width="1878" height="375" key="GridCell.Tab.0.left/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.0.left/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.0.right" />
     <state width="1878" height="375" key="GridCell.Tab.0.right/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.0.right/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.1.bottom" />
     <state width="1878" height="375" key="GridCell.Tab.1.bottom/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.1.bottom/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.1.center" />
     <state width="1878" height="375" key="GridCell.Tab.1.center/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.1.center/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.1.left" />
     <state width="1878" height="375" key="GridCell.Tab.1.left/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.1.left/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.1.right" />
     <state width="1878" height="375" key="GridCell.Tab.1.right/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.1.right/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.2.bottom" />
     <state width="1878" height="375" key="GridCell.Tab.2.bottom/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.2.bottom/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.2.center" />
     <state width="1878" height="375" key="GridCell.Tab.2.center/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.2.center/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.2.left" />
     <state width="1878" height="375" key="GridCell.Tab.2.left/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.2.left/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.2.right" />
     <state width="1878" height="375" key="GridCell.Tab.2.right/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.2.right/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.3.bottom" />
     <state width="1878" height="375" key="GridCell.Tab.3.bottom/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.3.bottom/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.3.center" />
     <state width="1878" height="375" key="GridCell.Tab.3.center/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.3.center/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.3.left" />
     <state width="1878" height="375" key="GridCell.Tab.3.left/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.3.left/3360.2100" />
     <state width="1878" height="375" key="GridCell.Tab.3.right" />
     <state width="1878" height="375" key="GridCell.Tab.3.right/1920.1080/3360.2100" />
+    <state width="1878" height="375" key="GridCell.Tab.3.right/3360.2100" />
     <state width="1878" height="370" key="GridCell.Tab.4.bottom" />
     <state width="1878" height="370" key="GridCell.Tab.4.bottom/1920.1080/3360.2100" />
     <state width="1878" height="370" key="GridCell.Tab.4.center" />

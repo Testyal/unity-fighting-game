@@ -10,6 +10,7 @@
           <e p="DummyController.cs" t="Include" />
         </e>
         <e p="InverseKinematics.cs" t="Include" />
+        <e p="MaintainGroundDistance.cs" t="Include" />
         <e p="Moves" t="Include">
           <e p="DefenseMove.cs" t="Include" />
           <e p="Move.cs" t="Include" />
@@ -17,6 +18,7 @@
             <e p="UnityChan_sLP.cs" t="Include" />
           </e>
         </e>
+        <e p="SinusoidalMovement.cs" t="Include" />
         <e p="UnityChan" t="Include">
           <e p="ADController.cs" t="Include" />
           <e p="AttackController.cs" t="Include" />
