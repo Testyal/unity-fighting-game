@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70fb1d74-faa9-414f-8ca7-753f73078153" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/LegStepper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/InverseKinematics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/InverseKinematics.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InverseKinematics.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/InverseKinematics.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LegStepper.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MaintainGroundDistance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MaintainGroundDistance.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Moves/DefenseMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Moves/DefenseMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SinusoidalMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SinusoidalMovement.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,9 +43,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_vLP.prefab.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MaintainGroundDistance.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/MaintainGroundDistance.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/DefenseMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SinusoidalMovement.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DummyCharacter/DummyAttackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/DefenseMove.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/ADController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -55,7 +61,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/InputMovementController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/InverseKinematics.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LegStepper.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -82,13 +88,15 @@
         <option value="$PROJECT_DIR$/Assets/Moves/Move.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/Character.cs" />
-        <option value="$PROJECT_DIR$/Assets/Moves/DefenseMove.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" />
         <option value="$PROJECT_DIR$/Assets/DummyCharacter/DummyController.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SimpleMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/SinusoidalMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Moves/DefenseMove.cs" />
         <option value="$PROJECT_DIR$/Assets/MaintainGroundDistance.cs" />
         <option value="$PROJECT_DIR$/Assets/InverseKinematics.cs" />
-        <option value="$PROJECT_DIR$/Assets/SimpleMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/LegStepper.cs" />
       </list>
     </option>
   </component>
@@ -151,7 +159,7 @@
       <workItem from="1584516600847" duration="47425000" />
       <workItem from="1584796881740" duration="853000" />
       <workItem from="1584797755841" duration="84745000" />
-      <workItem from="1585640121623" duration="1297000" />
+      <workItem from="1585640121623" duration="8165000" />
     </task>
     <task id="LOCAL-00001" summary="Change motion input to a Vector2.">
       <created>1584445239958</created>
@@ -265,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585564513845</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Funny spider moves with the ground.">
+      <created>1585651269726</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1585651269726</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,7 +317,8 @@
     <MESSAGE value="Made the dummy character go really jumpy." />
     <MESSAGE value="Implement a 2D inverse kinematic leg for no good reason (other than it looks funny)." />
     <MESSAGE value="Change angle calculation function to Mathf.Atan2." />
-    <option name="LAST_COMMIT_MESSAGE" value="Change angle calculation function to Mathf.Atan2." />
+    <MESSAGE value="Funny spider moves with the ground." />
+    <option name="LAST_COMMIT_MESSAGE" value="Funny spider moves with the ground." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2503" y="200" key="#Vim_Emulation" />

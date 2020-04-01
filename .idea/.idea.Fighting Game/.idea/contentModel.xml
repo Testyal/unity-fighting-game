@@ -9,7 +9,7 @@
           <e p="DummyAttackController.cs" t="Include" />
           <e p="DummyController.cs" t="Include" />
         </e>
-        <e p="InverseKinematics.cs" t="Include" />
+        <e p="LegStepper.cs" t="Include" />
         <e p="MaintainGroundDistance.cs" t="Include" />
         <e p="Moves" t="Include">
           <e p="DefenseMove.cs" t="Include" />
