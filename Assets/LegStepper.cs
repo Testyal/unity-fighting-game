@@ -7,21 +7,22 @@ using UnityEngine;
 [ExecuteInEditMode]
 class LegStepper: MonoBehaviour
 {
-    [SerializeField] private Vector3 rayDirection;
-    [SerializeField] private float stepLength;
+    [SerializeField] private float step;
 
     private InverseKinematics kinematics;
     private LegInterpolator interpolator;
     
     private Vector3 foot;
 
-    enum LegState
+    public enum LegState
     {
         Stationary,
         Interpolating
     }
 
     private LegState state;
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private void Start()
     {
@@ -30,8 +31,11 @@ class LegStepper: MonoBehaviour
         
         this.kinematics = new InverseKinematics(lowerLeg, upperLeg);
 
+        this.foot = kinematics.Foot();
+        
         this.state = LegState.Stationary;
     }
+    
 
     private void Update()
     {
@@ -45,15 +49,18 @@ class LegStepper: MonoBehaviour
                 break;
         }
     }
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private void UpdateStationary()
     {
         RaycastHit raycast;
-        if (Physics.Raycast(transform.position, rayDirection, out raycast))
+        if (Physics.Raycast(transform.position + step * Vector3.right, Vector3.down, out raycast))
         {
-            Debug.DrawLine(transform.position, raycast.point, Color.red);
+            Debug.DrawLine(transform.position, transform.position + step * Vector3.right, Color.red);
+            Debug.DrawLine(transform.position + step * Vector3.right, raycast.point, Color.red);
 
-            if (Vector3.Magnitude(foot - raycast.point) > stepLength)
+            if (Vector3.Magnitude(foot - raycast.point) > Mathf.Abs(step))
             {
                 this.interpolator = new LegInterpolator(foot, raycast.point);
                 this.foot = raycast.point;
@@ -64,6 +71,7 @@ class LegStepper: MonoBehaviour
             kinematics.Target(foot);
         }
     }
+    
 
     private void UpdateInterpolator()
     {
@@ -74,6 +82,7 @@ class LegStepper: MonoBehaviour
     }
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 public class InverseKinematics
 {
@@ -139,7 +148,9 @@ public class InverseKinematics
             
         Debug.DrawLine(transform.position, target, Color.green);
 
-        if (Vector3.Magnitude(delta) >= 2 * legLength) delta *= 1.9f / Vector3.Magnitude(delta);
+        // If the target position is too far away from the top of the leg, inverse kinematics won't be able to reach it.
+        // This line ensures the leg stays below its maximum extension.
+        if (Vector3.Magnitude(delta) >= 2 * legLength) delta *= 1.99f * legLength / Vector3.Magnitude(delta);
 
         var (xParameter, yParameter) = CalculateParameters(delta.x, delta.y);
 
@@ -157,8 +168,16 @@ public class InverseKinematics
         lowerLeg.localPosition = legLength * upperLegDirection;
         lowerLeg.rotation = Quaternion.Euler(0.0f, 0.0f, lowerLegAngle);
     }
+
+
+    public Vector3 Foot()
+    {
+        return lowerLeg.position + legLength * (Mathf.Cos(lowerLeg.eulerAngles.z) * Vector3.right +
+                                                Mathf.Sin(lowerLeg.eulerAngles.z) * Vector3.up);
+    }
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class LegInterpolator
 {
@@ -183,7 +202,7 @@ class LegInterpolator
         if (timeElapsed > totalTime) return end;
         
         return Vector3.Lerp(start, end, timeElapsed / totalTime) 
-               - (timeElapsed / totalTime) * (timeElapsed / totalTime - 1.0f) * Vector3.up;
+               - 2.0f * (timeElapsed / totalTime) * (timeElapsed / totalTime - 1.0f) * Vector3.up;
     }
 }
 

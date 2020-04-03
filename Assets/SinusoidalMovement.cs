@@ -13,7 +13,7 @@ public class SinusoidalMovement : MonoBehaviour
     {
         timeElapsed += Time.deltaTime;
         // to avoid overflow.
-        if (timeElapsed > 2.0f * Mathf.PI) timeElapsed = 0.0f;
+        if (speed * timeElapsed > 2.0f * Mathf.PI) timeElapsed = 0.0f;
         
         // d/dt A sin(ωt) = Aω cos(ωt)
         transform.Translate((amplitude * speed * Mathf.Cos(speed * timeElapsed) * Time.deltaTime) * Vector3.right);
