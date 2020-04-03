@@ -35,9 +35,9 @@ class LegStepper: MonoBehaviour
         
         this.state = LegState.Stationary;
     }
-    
 
-    private void Update()
+
+   /* private void Update()
     {
         switch (state)
         {
@@ -48,8 +48,8 @@ class LegStepper: MonoBehaviour
                 UpdateInterpolator();
                 break;
         }
-    }
-    
+    } */
+
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private void UpdateStationary()
@@ -79,6 +79,32 @@ class LegStepper: MonoBehaviour
         kinematics.Target(point);
 
         if (point == foot) this.state = LegState.Stationary;
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    public bool Step()
+    {
+        LegState priorState = state;
+        
+        switch (state)
+        {
+            case LegState.Stationary:
+                UpdateStationary();
+                break;
+            case LegState.Interpolating:
+                UpdateInterpolator();
+                break;
+        }
+
+        if (priorState == LegState.Interpolating && state == LegState.Stationary) return true;
+        return false;
+    }
+
+
+    public void PlantFoot()
+    {
+        kinematics.Target(foot);
     }
 }
 
@@ -111,6 +137,7 @@ public class InverseKinematics
         this.legLength = legLength;
     }
     
+    // TODO: there needs to be a more intelligent method for selecting the sign of the square roots. Currently, if the foot lies under the body, the wrong square root is selected and the leg will bend backwards.
     private (float, float) CalculateParameters(float deltaX, float deltaY)
     {
         float xParameter;

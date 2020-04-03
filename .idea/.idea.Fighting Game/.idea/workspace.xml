@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70fb1d74-faa9-414f-8ca7-753f73078153" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Fighting Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/LegStepper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LegStepper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SinusoidalMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SinusoidalMovement.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,25 +35,27 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_jLP_D.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/InputAttackController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MaintainGroundDistance.cs.meta" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/MaintainGroundDistance.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DummyCharacter/DummyAttackController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/ADController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SinusoidalMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.11/UnityEngine.TestRunner/Utils/AssemblyProvider/AssemblyWrapper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Moves/Move.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DummyCharacter/DummyController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/Character.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_vLP.prefab.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MaintainGroundDistance.cs.meta" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.prefab.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/MaintainGroundDistance.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/UnityChan_LP/UnityChan_sLP.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/DefenseMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/SinusoidalMovement.cs.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/DummyCharacter/DummyAttackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Moves/DefenseMove.cs.meta" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/ADController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SinusoidalMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/DefenseController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Variant.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Moves/Move.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/DummyCharacter/DummyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/Character.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/UnityChan/MovementController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/LegCoordinator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/AttackController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UnityChan/InputMovementController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/LegStepper.cs" root0="FORCE_HIGHLIGHTING" />
@@ -93,6 +94,7 @@
         <option value="$PROJECT_DIR$/Assets/InverseKinematics.cs" />
         <option value="$PROJECT_DIR$/Assets/SinusoidalMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/LegCoordinator.cs" />
+        <option value="$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.1.11/UnityEngine.TestRunner/Utils/AssemblyProvider/AssemblyWrapper.cs" />
         <option value="$PROJECT_DIR$/Assets/LegStepper.cs" />
       </list>
     </option>
@@ -157,7 +159,7 @@
       <workItem from="1584796881740" duration="853000" />
       <workItem from="1584797755841" duration="84745000" />
       <workItem from="1585640121623" duration="13200000" />
-      <workItem from="1585903615078" duration="1092000" />
+      <workItem from="1585903615078" duration="4634000" />
     </task>
     <task id="LOCAL-00001" summary="Change motion input to a Vector2.">
       <created>1584445239958</created>
@@ -285,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585736707350</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Change step trigger raycast to a right angle thing wow great commit message.">
+      <created>1585904873806</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1585904873806</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +333,8 @@
     <MESSAGE value="Change angle calculation function to Mathf.Atan2." />
     <MESSAGE value="Funny spider moves with the ground." />
     <MESSAGE value="The spider hops now." />
-    <option name="LAST_COMMIT_MESSAGE" value="The spider hops now." />
+    <MESSAGE value="Change step trigger raycast to a right angle thing wow great commit message." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change step trigger raycast to a right angle thing wow great commit message." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2503" y="200" key="#Vim_Emulation" />
